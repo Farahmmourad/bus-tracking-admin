@@ -19,12 +19,19 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body">
-              <form>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <input
                   class="form-control"
                   type="text"
-                  placeholder="Name"
-                  formControlName="name"
+                  placeholder="FirstName"
+                  formControlName="FirstName"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="LastName"
+                  formControlName="LastName"
                 />
                 <br />
                 <input
@@ -41,23 +48,16 @@
                   formControlName="password"
                 />
                 <br />
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Camera Name"
-                  formControlName="camera"
-                />
-                <br />
                 <div class="form-group">
                   <label>Route</label>
                   <select
                     class="form-control select2"
                     data-dropdown-css-class="select2"
                     style="width: 100%"
-                    formControlName="departmentId"
+                    formControlName="routeId"
                   >
                     <option *ngFor="let route of routes" value="{{ route.id }}">
-                      {{ route.value }}
+                      {{ route.routeNumber }}
                     </option>
                   </select>
                 </div>

@@ -9,6 +9,8 @@ import { Plan } from '../Models/Plan';
 export class AdminService {
   private url = 'https://localhost:7103/api/';
   private planUrl = this.url + 'Plans';
+  private routeUrl = this.url + 'Route';
+  private busesUrl = this.url + 'Buses';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -30,5 +32,13 @@ export class AdminService {
 
   updatePlan(plan: any): Observable<any> {
     return this.httpClient.patch(this.planUrl + '/update/' + plan.id, plan);
+  }
+
+  getRoutes(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.routeUrl);
+  }
+
+  getBuses(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.busesUrl);
   }
 }

@@ -19,7 +19,7 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body">
-              <form [formGroup]="form">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <input
                   class="form-control"
                   type="text"
@@ -49,9 +49,9 @@
                 <br />
                 <h4>Bus Stops</h4>
                 <br>
-                <div formArrayName="locations">
-                  <div *ngFor="let location of locations.controls; let i = index" [formGroupName]="i">
-                    <input class="form-control" type="text" placeholder="Name" formControlName="name">
+                <div formArrayName="RouteStops">
+                  <div *ngFor="let RouteStops of RouteStops.controls; let i = index" [formGroupName]="i">
+                    <input class="form-control" type="text" placeholder="Name" formControlName="BusStopName">
                     <br />
                     <input class="form-control" type="number" placeholder="Longitude" formControlName="longitude">
                     <br />

@@ -26,26 +26,14 @@
                   <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Passengers Number</th>
-                    <th>Driver</th>
-                    <th>Status</th>
-                    <th>Active</th>
-                    <th>Actions</th>
+                    <th>route Id</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <!-- <tr *ngFor="let employee of employees">
-                    <td>{{employee.firstName}}</td>
-                    <td>{{employee.lastName}}</td>
-                    <td>{{employee.email}}</td>
-                    <td>{{employee.department.value}}</td>
-                    <td>{{employee.jobTitle.value}}</td>
-                    <td>
-                      <button type="submit" class="btn btn-dark" style="background-color: darkgreen; border-color: darkgreen; margin-right: 10px;" (click)="detailsPage(employee.id)" ><i class="fas fa-solid fa-file "></i></button>
-                      <button type="submit" class="btn btn-dark" style="background-color: darkblue; border-color: darkblue; margin-right: 10px;" (click)="updatePage(employee.id)" ><i class="fas fa-solid fa-pen"></i></button>
-                      <button type="submit" class="btn btn-dark" style="background-color: darkred; border-color: darkred" (click)="disactivate(employee.id,employee)" ><i class="fas fa-solid fa-trash"></i></button>
-                    </td>
-                  </tr> -->
+                    <tr *ngFor="let bus of buses">
+                      <td>{{ bus.name }}</td>
+                      <td>{{ bus.routeId }}</td>
+                    </tr>
                   </tbody>
   
                 </table>
