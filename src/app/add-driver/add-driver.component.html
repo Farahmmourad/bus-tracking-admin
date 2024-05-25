@@ -1,0 +1,80 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Add Bus</h1>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <form>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Name"
+                  formControlName="name"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Email"
+                  formControlName="email"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Camera Name"
+                  formControlName="camera"
+                />
+                <br />
+                <div class="form-group">
+                  <label>Route</label>
+                  <select
+                    class="form-control select2"
+                    data-dropdown-css-class="select2"
+                    style="width: 100%"
+                    formControlName="departmentId"
+                  >
+                    <option *ngFor="let route of routes" value="{{ route.id }}">
+                      {{ route.value }}
+                    </option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">ADD</button>
+              </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".select2").select2();
+  });
+</script>

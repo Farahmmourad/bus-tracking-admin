@@ -1,0 +1,80 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Edit Plan</h1>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <form (ngSubmit)="updatePlan()">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  [(ngModel)]="plan.name"
+                  required
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  id="price"
+                  name="price"
+                  placeholder="Price"
+                  [(ngModel)]="plan.price"
+                  required
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="numberOfDays"
+                  name="numberOfDays"
+                  placeholder="Days"
+                  value="plan.numberOfDays"
+                  [(ngModel)]="plan.numberOfDays"
+                  required
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  id="color"
+                  name="color"
+                  placeholder="Color"
+                  [(ngModel)]="plan.color"
+                  required
+                />
+                <br />
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".select2").select2();
+  });
+</script>

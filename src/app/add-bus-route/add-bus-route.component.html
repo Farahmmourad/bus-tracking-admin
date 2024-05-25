@@ -1,0 +1,83 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Add Route</h1>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <form [formGroup]="form">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Description"
+                  formControlName="description"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Route Number"
+                  formControlName="routeNumber"
+                />
+                <br />
+                <div class="form-group">
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customSwitch1"
+                    />
+                    <label class="custom-control-label" for="customSwitch1"
+                      >Active</label
+                    >
+                  </div>
+                </div>
+                <br />
+                <h4>Bus Stops</h4>
+                <br>
+                <div formArrayName="locations">
+                  <div *ngFor="let location of locations.controls; let i = index" [formGroupName]="i">
+                    <input class="form-control" type="text" placeholder="Name" formControlName="name">
+                    <br />
+                    <input class="form-control" type="number" placeholder="Longitude" formControlName="longitude">
+                    <br />
+                    <input class="form-control" type="number" placeholder="Latitude" formControlName="latitude">
+                    <br />
+                    <button type="button" class="btn" (click)="removeLocation(i)">Remove</button>
+                    <hr>
+                  </div>
+                </div>
+                <button type="button" class="btn" (click)="addLocation()">Add Bus Stop</button>
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-primary">ADD</button>
+              </form>
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".select2").select2();
+  });
+</script>

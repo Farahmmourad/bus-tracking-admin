@@ -1,0 +1,26 @@
+
+
+<div class="modal-content">
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+  <div class="modal-footer justify-content-between">
+    <button
+      type="button"
+      class="btn btn-default"
+      data-dismiss="modal"
+      mat-button
+      (click)="onNoClick()"
+    >
+      Close
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      mat-button
+      (click)="onYesClick()"
+    >
+      Save changes
+    </button>
+  </div>
+</div>

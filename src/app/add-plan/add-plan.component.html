@@ -1,0 +1,80 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Add Plan</h1>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <!-- /.card-header -->
+              <div class="card-body">
+                <form [formGroup]="planGroup">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Name"
+                    formControlName="name"
+                  />
+                  <div *ngIf="planGroup.get('name')?.hasError('required') && planGroup.get('name')?.touched" style="color: red;">
+                    Name is required
+                  </div>
+                  <br />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Price"
+                    formControlName="price"
+                  />
+                  <div *ngIf="planGroup.get('price')?.hasError('required') && planGroup.get('price')?.touched" style="color: red;">
+                    Price is required
+                  </div>
+                  <br />
+                  <input
+                    class="form-control"
+                    type="number"
+                    placeholder="Days"
+                    formControlName="numberOfDays"
+                  />
+                  <div *ngIf="planGroup.get('numberOfDays')?.hasError('required') && planGroup.get('numberOfDays')?.touched" style="color: red;">
+                    Days number is required
+                  </div>
+                  <br />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Color"
+                    formControlName="color"
+                  />
+                  <div *ngIf="planGroup.get('color')?.hasError('required') && planGroup.get('color')?.touched" style="color: red;">
+                    Color is required
+                  </div>
+                  <br />
+                  <button type="submit" [disabled]="planGroup.invalid" class="btn btn-primary" (click)="addPlan()">ADD</button>
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  
+  <script>
+    $(document).ready(function () {
+      $(".select2").select2();
+    });
+  </script>
+  
